@@ -21,7 +21,7 @@ Small library to change an image's color on hover/mouseover.
     AmazingIcon.parseDocument(); //Goes through the whole document and converts anchors with the amazingIcon class to amazingIcons.
     
     AmazingIcon.hover(function(icon,ev){ //Pass a function that takes an AmazingIcon and an Event as parameters.
-      icon.changeColor("lightblue"); //change color
+      icon.setColor("lightblue"); //change color
       icon.setLabel("Peekabooh"); //change label
       icon.setHref("http://www.google.com"); //change href
     });
@@ -29,7 +29,7 @@ Small library to change an image's color on hover/mouseover.
     AmazingIcon.unhover("reset"); //Pass a "reset" string to any event reset the icon's attributes to the originals.
     
     AmazingIcon.click(function(icon,ev){
-      icon.changeColor("blue"); //change color
+      icon.setColor("blue"); //change color
     });
     
     ```
