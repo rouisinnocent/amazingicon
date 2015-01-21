@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+    <title></title>
+    <script src=amazingicon.js></script>
+    <script src=tinycolor.js></script>
+    <script>
+        window.onload = function () {
+            AmazingIcon.parseDocument();
+
+            AmazingIcon.hover(function (icon, ev) {
+                icon.setColor("lightblue").setLabel("Sorry for the delay!"); //#669dbb
+            });
+
+            AmazingIcon.unhover("reset");
+
+            var Squares = AmazingIcon.getByLabelID("click");
+            var Circles = AmazingIcon.getByLabelID("hoverandclick");
+
+            Circles.hover(function (icon) {
+                icon.setColor("khaki");
+            });
+
+            Circles.click(function (icon) {
+                icon.setColor("#ffab3d");
+                icon.setLabel("Orange circles");
+            });
+
+            Squares.delEvent("mouseover");
+
+            Squares.click(function (icon) {
+                icon.setColor("lightcoral");
+                icon.setLabel("Red Squares");
+            });
+        }
+    </script>
+    <style>
+        .amazingIconObject {
+            /* Display icons in the same row */
+            display: inline-block;
+            /* Aligning icons vertically inside parent */
+            vertical-align: top;
+            /* Centering labels */
+            text-align: center;
+            /* Sepparation between the icons */
+            margin-right: 5px;
+            /* Break label to fit icon width */
+            word-wrap: break-word;
+            /* Sets the width of the anchor (not the icon) */
+            width: 100px;
+            /* The following properties are design-subjective */
+            font-family: Verdana;
+            font-weight: bold;
+            color: lightcoral;
+            margin-right: 5px;
+            text-decoration: none;
+        }
+        /* The following instructions are unnecessary */
+        body {
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="menu">
+        <a class="amazingIcon" href="#" data-src="stats.png">Hover</a>
+        <a class="amazingIcon" href="#" data-src="squares.png">Click</a>
+        <a class="amazingIcon" href="#" data-src="circles.png">Hover and Click</a>
+    </header>
+</body>
+
+</html>
